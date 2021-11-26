@@ -1,7 +1,7 @@
-## MDContent
+## MDContents
 
-MDContent target to parse markdown content to a structured data, and output with Json format.
-MDContent is based on [mistune](https://github.com/lepture/mistune) project to parse markdown.
+MDContents target to parse markdown content to a structured data, and output with Json format.
+MDContents is based on [mistune](https://github.com/lepture/mistune) project to parse markdown.
 
 ## Sample
 
