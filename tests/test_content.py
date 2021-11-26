@@ -1,7 +1,6 @@
-from mistune.markdown import Markdown
-from mdcontents.renderer import JsonRenderer
-from mistune.renderers import HTMLRenderer, AstRenderer
+from mdcontents import json as json_content
 import json
+
 
 markdown_string = """
 - Link: https://github.com
@@ -15,6 +14,5 @@ markdown_string = """
 - [ ] Is AB CleanUp : 
 """
 
-md = Markdown(renderer=JsonRenderer())
-jsonObject = md(markdown_string)
+jsonObject = json_content(markdown_string)
 print(json.dumps(jsonObject))
