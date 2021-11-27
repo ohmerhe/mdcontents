@@ -3,7 +3,7 @@ from mistune.markdown import Markdown
 from mdcontents.renderer import JsonRenderer
 
 
-def create_markdown(plugins=None):
+def create_markdown(renderer=JsonRenderer(), plugins=None):
 
     if plugins:
         _plugins = []
@@ -13,7 +13,7 @@ def create_markdown(plugins=None):
             else:
                 _plugins.append(p)
         plugins = _plugins
-    return Markdown(JsonRenderer(), plugins=plugins)
+    return Markdown(renderer=renderer, plugins=plugins)
 
 
 json = create_markdown(plugins=['strikethrough', 'footnotes', 'table'])

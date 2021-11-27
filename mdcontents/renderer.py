@@ -59,12 +59,17 @@ class JsonRenderer(BaseRenderer):
 
     def list_item(self, children, level):
         if type(children) == list and len(children) == 1:
-            return {"list_item": children[0]}
+            return children[0]
+        if type(children) == list and len(children) == 2 and "text" in children[0] and "list" in children[1]:
+            children[0].update(children[1])
+            return children[0]
         return {"list_item": children}
 
     def block_text(self, text):
         if type(text) == list and len(text) == 1:
             return text[0]
+        if type(text) == list:
+            return {"block_text": list(map(lambda x: x['text'], text))}
         return {"block_text": text}
 
     def _create_default_method(self, name):
